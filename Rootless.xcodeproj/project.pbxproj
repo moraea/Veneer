@@ -172,9 +172,9 @@
 				CEDE8D7D2298501600C73034 /* kern_start.cpp */,
 				818B4B762808493B00848AB8 /* kern_rtls.hpp */,
 				818B4B752808493B00848AB8 /* kern_rtls.cpp */,
-				81BB75E02810937D00D50DC6 /* UserKernelShared.h */,
 				81BB76042812206600D50DC6 /* RTLSClientProvider */,
 				81BB75DB2810929D00D50DC6 /* RTLSClient */,
+				81BB75E02810937D00D50DC6 /* UserKernelShared.h */,
 			);
 			path = Rootless;
 			sourceTree = "<group>";

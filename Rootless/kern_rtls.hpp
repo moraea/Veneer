@@ -11,6 +11,15 @@
 
 #define MODULE_SHORT "rtls"
 
+// Kernel SDK headers
+#include <IOKit/IORegistryEntry.h>
+#include <IOKit/IOService.h>
+#include <mach-o/loader.h>
+#include <mach-o/fat.h>
+// Lilu headers
+#include <Headers/kern_patcher.hpp>
+#include <Headers/kern_file.hpp>
+
 class RTLS {
 public:
     void init();
@@ -35,6 +44,43 @@ private:
      * The only allowed instance of this class
      */
     static RTLS* callbackRtls;
+
+    struct Codesign {
+        void init(KernelPatcher &patcher) {
+            cdhash.init(patcher);
+        };
+    
+    private:
+        struct CDHash {
+            void init(KernelPatcher &patcher);
+
+        private:
+            /**
+             *  Private self instance for callbacks
+             */
+            static CDHash *callbackCdhs;
+
+            /* Mykola Grymalyuk code-signing certificate team ID */
+            static constexpr const char *mykolaTeamId { "S74BDJXQMD" };
+
+            /* OSArray with OSData instances */
+            OSArray *platformCDHashes;
+
+            mach_vm_address_t orgCsfgGetPlatformBinary {};
+            static int wrapCsfgGetPlatformBinary(struct fileglob *fg);
+
+            /* Pointer to csfg_get_teamid function */
+            const char *(*orgCsfgGetTeamId)(struct fileglob *fg) {nullptr};
+            /* Pointer to csfg_get_path function */
+            int *(*orgCsfgGetPath)(struct fileglob *fg, char *path, int *len) {nullptr};
+            /* Pointer to csfg_get_cdhash function */
+            uint8_t *(*orgCsfgGetCdhash)(struct fileglob *fg, uint64_t offset, size_t *cdhash_size) {nullptr};
+
+            bool verifyFromFileglob(struct fileglob *fg);
+            bool cdhashAllowed(uint8_t *cdhashToCheck);
+        } cdhash;
+
+    } codesign;
 };
 
 #endif /* kern_rtls_hpp */

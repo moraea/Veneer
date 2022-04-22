@@ -8,13 +8,8 @@
 // Lilu headers
 #include <Headers/plugin_start.hpp>
 #include <Headers/kern_api.hpp>
-
-#define MODULE_SHORT "rtls"
-
-#pragma mark - Plugin start
-static void pluginStart() {
-    DBGLOG(MODULE_SHORT, "start");
-};
+// Project headers
+#include "kern_rtls.hpp"
 
 // Boot args.
 static const char *bootargOff[] {
@@ -40,5 +35,8 @@ PluginConfiguration ADDPR(config) {
     arrsize(bootargBeta),
     KernelVersion::BigSur,
     KernelVersion::Monterey,
-    pluginStart
+    []() {
+        RTLS::createShared();
+        RTLS::getShared()->init();
+    }
 };

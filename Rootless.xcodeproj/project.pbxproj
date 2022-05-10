@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		818B4B772808493B00848AB8 /* kern_rtls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 818B4B752808493B00848AB8 /* kern_rtls.cpp */; };
 		818B4B782808493B00848AB8 /* kern_rtls.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 818B4B762808493B00848AB8 /* kern_rtls.hpp */; };
+		81A92A0C282AB7EA00321521 /* cdhash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81A92A0B282AB7EA00321521 /* cdhash.cpp */; };
 		81BB75DE2810930100D50DC6 /* RTLSClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81BB75DC2810930100D50DC6 /* RTLSClient.cpp */; };
 		81BB75DF2810930100D50DC6 /* RTLSClient.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 81BB75DD2810930100D50DC6 /* RTLSClient.hpp */; };
 		81BB76002810A17D00D50DC6 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 81BB75FF2810A17D00D50DC6 /* main.c */; };
@@ -37,9 +38,10 @@
 		810F1BA526C4635F00452AE5 /* libkmod.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkmod.a; path = MacKernelSDK/Library/x86_64/libkmod.a; sourceTree = "<group>"; };
 		818B4B752808493B00848AB8 /* kern_rtls.cpp */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kern_rtls.cpp; sourceTree = "<group>"; tabWidth = 4; };
 		818B4B762808493B00848AB8 /* kern_rtls.hpp */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.cpp.h; path = kern_rtls.hpp; sourceTree = "<group>"; tabWidth = 4; };
+		81A92A0B282AB7EA00321521 /* cdhash.cpp */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cdhash.cpp; sourceTree = "<group>"; tabWidth = 4; };
 		81BB75DC2810930100D50DC6 /* RTLSClient.cpp */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RTLSClient.cpp; sourceTree = "<group>"; tabWidth = 4; };
 		81BB75DD2810930100D50DC6 /* RTLSClient.hpp */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.cpp.h; path = RTLSClient.hpp; sourceTree = "<group>"; tabWidth = 4; };
-		81BB75E02810937D00D50DC6 /* UserKernelShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserKernelShared.h; sourceTree = "<group>"; };
+		81BB75E02810937D00D50DC6 /* UserKernelShared.h */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = UserKernelShared.h; sourceTree = "<group>"; tabWidth = 4; };
 		81BB75FD2810A17D00D50DC6 /* clienttest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = clienttest; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BB75FF2810A17D00D50DC6 /* main.c */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; tabWidth = 4; };
 		81BB7605281220AB00D50DC6 /* RTLSClientProvider.cpp */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RTLSClientProvider.cpp; sourceTree = "<group>"; tabWidth = 4; };
@@ -170,8 +172,9 @@
 			children = (
 				CEDE8CEC22984C0800C73034 /* Info.plist */,
 				CEDE8D7D2298501600C73034 /* kern_start.cpp */,
-				818B4B762808493B00848AB8 /* kern_rtls.hpp */,
 				818B4B752808493B00848AB8 /* kern_rtls.cpp */,
+				818B4B762808493B00848AB8 /* kern_rtls.hpp */,
+				81A92A0B282AB7EA00321521 /* cdhash.cpp */,
 				81BB76042812206600D50DC6 /* RTLSClientProvider */,
 				81BB75DB2810929D00D50DC6 /* RTLSClient */,
 				81BB75E02810937D00D50DC6 /* UserKernelShared.h */,
@@ -401,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81A92A0C282AB7EA00321521 /* cdhash.cpp in Sources */,
 				CEDE8D7C22984FE600C73034 /* plugin_start.cpp in Sources */,
 				81BB7607281220AB00D50DC6 /* RTLSClientProvider.cpp in Sources */,
 				81BB75DE2810930100D50DC6 /* RTLSClient.cpp in Sources */,

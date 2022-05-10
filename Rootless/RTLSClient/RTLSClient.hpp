@@ -36,13 +36,11 @@ public:
                                     IOExternalMethodDispatch* dispatch, OSObject* target, void* reference) override;
     
 protected:
-    static IOReturn sMethodOpen(RTLSClient* target, void* ref, IOExternalMethodArguments* args);
-    static IOReturn sMethodClose(RTLSClient* target, void* ref, IOExternalMethodArguments* args);
     static IOReturn sMethodTest(RTLSClient* target, void* ref, IOExternalMethodArguments* args);
+    static IOReturn sMethodPlistExecute(RTLSClient* target, void* ref, IOExternalMethodArguments* args);
     
-    virtual IOReturn methodOpen(IOExternalMethodArguments* args);
-    virtual IOReturn methodClose(IOExternalMethodArguments* args);
     virtual IOReturn methodTest(IOExternalMethodArguments* args);
+    virtual IOReturn plistExecute(OSArray *plist);
 };
 
 

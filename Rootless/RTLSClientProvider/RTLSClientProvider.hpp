@@ -30,7 +30,7 @@ public:
     virtual void stop(IOService* provider) override;
 
 private:
-    RTLS *rootless;
+    RTLS::Codesign *codesign;
 };
 
 #endif /* RTLSClientProvider_hpp */

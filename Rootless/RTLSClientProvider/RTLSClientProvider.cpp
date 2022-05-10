@@ -34,7 +34,7 @@ bool RTLSClientProvider::init(OSDictionary* dictionary)
     }
     
     waitForMatchingService(nameMatching("Rootless"));
-    rootless = RTLS::getShared();
+    codesign = &RTLS::getShared()->codesign;
 
     return true;
 }

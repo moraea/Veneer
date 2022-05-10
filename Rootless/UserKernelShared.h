@@ -10,9 +10,8 @@
 #define UserKernelShared_h
 
 enum {
-    kMethodOpen,
-    kMethodClose,
     kMethodTest,
+    kMethodExecutePlist,
     
     kNumberOfMethods // Must be last
 };

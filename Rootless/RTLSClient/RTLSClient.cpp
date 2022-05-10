@@ -17,26 +17,19 @@ OSDefineMetaClassAndStructors(RTLSClient, IOUserClient);
 
 // User client dispatch table
 const IOExternalMethodDispatch RTLSClient::sMethods[kNumberOfMethods] = {
-    { //kMethodOpen
-        (IOExternalMethodAction) &RTLSClient::sMethodOpen,      // Method pointer
-        0,                                                          // Num of scalar input values
-        0,                                                          // Num of struct input values
-        0,                                                          // Num of scalar output values
-        0                                                           // Num of struct output values
+    { // kMethodOpen
+        (IOExternalMethodAction) &RTLSClient::sMethodTest,
+        0,
+        0,
+        0,
+        0
     },
-    { //kMethodClose
-        (IOExternalMethodAction) &RTLSClient::sMethodClose,     // Method pointer
-        0,                                                          // Num of scalar input values
-        0,                                                          // Num of struct input values
-        0,                                                          // Num of scalar output values
-        0                                                           // Num of struct output values
-    },
-    { //kMethodOpen
-        (IOExternalMethodAction) &RTLSClient::sMethodTest,      // Method pointer
-        0,                                                          // Num of scalar input values
-        0,                                                          // Num of struct input values
-        0,                                                          // Num of scalar output values
-        0                                                           // Num of struct output values
+    { // kMethodExecutePlist
+        (IOExternalMethodAction) &RTLSClient::sMethodPlistExecute,
+        0,
+        kIOUCVariableStructureSize,
+        0,
+        0
     }
 };
 
@@ -94,33 +87,81 @@ IOReturn RTLSClient::clientClose(void)
 }
 
 // Static dispatch methods
-IOReturn RTLSClient::sMethodOpen(RTLSClient *target, void *ref, IOExternalMethodArguments *args)
-{
-    return target->methodOpen(args);
-}
-
-IOReturn RTLSClient::sMethodClose(RTLSClient *target, void *ref, IOExternalMethodArguments *args)
-{
-    return target->methodClose(args);
-}
-
 IOReturn RTLSClient::sMethodTest(RTLSClient *target, void *ref, IOExternalMethodArguments *args)
 {
     return target->methodTest(args);
 }
 
 // Non-static driver methods
-IOReturn RTLSClient::methodOpen(IOExternalMethodArguments *args)
-{
-    return kIOReturnSuccess;
-}
-
-IOReturn RTLSClient::methodClose(IOExternalMethodArguments *args)
-{
-    return kIOReturnSuccess;
-}
-
 IOReturn RTLSClient::methodTest(IOExternalMethodArguments *args)
 {
+    return kIOReturnSuccess;
+}
+
+IOReturn RTLSClient::sMethodPlistExecute(RTLSClient *target, void *ref, IOExternalMethodArguments *args)
+{
+    IOReturn result;
+    IOMemoryMap *map = nullptr;
+    const void *inputPtr;
+    size_t inputSize;
+    
+    if (args->structureInputDescriptor != nullptr) {
+        map = args->structureInputDescriptor->createMappingInTask(kernel_task, 0, kIOMapAnywhere | kIOMapReadOnly);
+        
+        if (!map)
+            return kIOReturnError;
+        
+        inputPtr = reinterpret_cast<decltype(inputPtr)>(map->getAddress());
+        inputSize = map->getSize();
+    } else {
+        inputPtr = args->structureInput;
+        inputSize = args->structureInputSize;
+    }
+    OSData *input = OSData::withBytes(inputPtr, inputSize);
+    OSSafeReleaseNULL(map);
+    if (!input)
+        return kIOReturnError;
+    
+    OSArray *inputXML = OSDynamicCast(OSArray, OSUnserializeXML((const char *)input->getBytesNoCopy(), inputSize));
+    if (!inputXML)
+        return kIOReturnError;
+    
+    result = target->plistExecute(inputXML);
+    
+    inputXML->release();
+    input->release();
+    return result;
+}
+
+// Non-static driver methods
+IOReturn RTLSClient::plistExecute(OSArray *plist)
+{
+    OSCollectionIterator *iterator;
+    OSDictionary *actionDict;
+    OSString *actionName;
+    
+    if (NULL != (iterator = OSCollectionIterator::withCollection(plist))) {
+        while (NULL != (actionDict = OSDynamicCast(OSDictionary, iterator->getNextObject()))) {
+            actionName = OSDynamicCast(OSString, actionDict->getObject("Action"));
+            if (!actionName)
+                continue;
+            
+            if (actionName->isEqualTo("Make CDHash a Platform Binary")) {
+                mProvider->codesign->cdhash.addCdhashAction(actionDict);
+            } else if (actionName->isEqualTo("Create Fake File or Folder")) {
+                SYSLOG("rtlsclnt", "unimplemented action (Create Fake File or Folder)");
+                //rvplFilesys->
+            } else if (actionName->isEqualTo("Add Entitlements for CDHash")) {
+                SYSLOG("rtlsclnt", "unimplemented action (Add Entitlements for CDHash)");
+                //rvplCodesign->
+            } else if (actionName->isEqualTo("Firmlink File or Folder")) {
+                SYSLOG("rtlsclnt", "unimplemented action (Firmlink File or Folder)");
+                //rvplFilesys->
+            } else if (actionName->isEqualTo("SysKC Is Ready")) {
+                SYSLOG("rtlsclnt", "unimplemented action (SysKC Is Ready)");
+                //rvplFilesys->
+            }
+        }
+    }
     return kIOReturnSuccess;
 }

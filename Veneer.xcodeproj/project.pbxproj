@@ -7,44 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		818B4B772808493B00848AB8 /* kern_rtls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 818B4B752808493B00848AB8 /* kern_rtls.cpp */; };
-		818B4B782808493B00848AB8 /* kern_rtls.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 818B4B762808493B00848AB8 /* kern_rtls.hpp */; };
-		81BB75DE2810930100D50DC6 /* RTLSClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81BB75DC2810930100D50DC6 /* RTLSClient.cpp */; };
-		81BB75DF2810930100D50DC6 /* RTLSClient.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 81BB75DD2810930100D50DC6 /* RTLSClient.hpp */; };
-		81BB76002810A17D00D50DC6 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 81BB75FF2810A17D00D50DC6 /* main.c */; };
-		81BB7607281220AB00D50DC6 /* RTLSClientProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81BB7605281220AB00D50DC6 /* RTLSClientProvider.cpp */; };
-		81BB7608281220AB00D50DC6 /* RTLSClientProvider.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 81BB7606281220AB00D50DC6 /* RTLSClientProvider.hpp */; };
+		8178640428B8BA3200AEA64B /* kern_venr_iokit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8178640228B8BA3200AEA64B /* kern_venr_iokit.cpp */; };
+		8178640528B8BA3200AEA64B /* kern_venr_iokit.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8178640328B8BA3200AEA64B /* kern_venr_iokit.hpp */; };
+		8178640928B8BDFC00AEA64B /* kern_venr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8178640728B8BDFC00AEA64B /* kern_venr.cpp */; };
+		8178640A28B8BDFC00AEA64B /* kern_venr.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8178640828B8BDFC00AEA64B /* kern_venr.hpp */; };
+		8178640D28B8BFFC00AEA64B /* VeneerClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8178640B28B8BFFC00AEA64B /* VeneerClient.cpp */; };
+		8178640E28B8BFFC00AEA64B /* VeneerClient.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8178640C28B8BFFC00AEA64B /* VeneerClient.hpp */; };
+		8178641228B9A33900AEA64B /* kern_helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8178641028B9A33900AEA64B /* kern_helpers.cpp */; };
+		8178641328B9A33900AEA64B /* kern_helpers.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8178641128B9A33900AEA64B /* kern_helpers.hpp */; };
 		CEDE8D7B22984F8F00C73034 /* libkmod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDE8D6E22984F7700C73034 /* libkmod.a */; };
 		CEDE8D7C22984FE600C73034 /* plugin_start.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEDE8D7822984F7700C73034 /* plugin_start.cpp */; };
 		CEDE8D7E2298501600C73034 /* kern_start.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEDE8D7D2298501600C73034 /* kern_start.cpp */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		81BB75FB2810A17D00D50DC6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		810098972783803800076D10 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		810F1BA426C4635000452AE5 /* libkmod.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkmod.a; path = usr/lib/libkmod.a; sourceTree = SDKROOT; };
 		810F1BA526C4635F00452AE5 /* libkmod.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkmod.a; path = MacKernelSDK/Library/x86_64/libkmod.a; sourceTree = "<group>"; };
-		818B4B752808493B00848AB8 /* kern_rtls.cpp */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kern_rtls.cpp; sourceTree = "<group>"; tabWidth = 4; };
-		818B4B762808493B00848AB8 /* kern_rtls.hpp */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.cpp.h; path = kern_rtls.hpp; sourceTree = "<group>"; tabWidth = 4; };
-		81BB75DC2810930100D50DC6 /* RTLSClient.cpp */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RTLSClient.cpp; sourceTree = "<group>"; tabWidth = 4; };
-		81BB75DD2810930100D50DC6 /* RTLSClient.hpp */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.cpp.h; path = RTLSClient.hpp; sourceTree = "<group>"; tabWidth = 4; };
-		81BB75E02810937D00D50DC6 /* UserKernelShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserKernelShared.h; sourceTree = "<group>"; };
-		81BB75FD2810A17D00D50DC6 /* clienttest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = clienttest; sourceTree = BUILT_PRODUCTS_DIR; };
-		81BB75FF2810A17D00D50DC6 /* main.c */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; tabWidth = 4; };
-		81BB7605281220AB00D50DC6 /* RTLSClientProvider.cpp */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RTLSClientProvider.cpp; sourceTree = "<group>"; tabWidth = 4; };
-		81BB7606281220AB00D50DC6 /* RTLSClientProvider.hpp */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.cpp.h; path = RTLSClientProvider.hpp; sourceTree = "<group>"; tabWidth = 4; };
-		CEDE8CE522984C0800C73034 /* Rootless.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Rootless.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		8178640228B8BA3200AEA64B /* kern_venr_iokit.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = kern_venr_iokit.cpp; sourceTree = "<group>"; };
+		8178640328B8BA3200AEA64B /* kern_venr_iokit.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = kern_venr_iokit.hpp; sourceTree = "<group>"; };
+		8178640728B8BDFC00AEA64B /* kern_venr.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = kern_venr.cpp; sourceTree = "<group>"; };
+		8178640828B8BDFC00AEA64B /* kern_venr.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = kern_venr.hpp; sourceTree = "<group>"; };
+		8178640B28B8BFFC00AEA64B /* VeneerClient.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VeneerClient.cpp; sourceTree = "<group>"; };
+		8178640C28B8BFFC00AEA64B /* VeneerClient.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VeneerClient.hpp; sourceTree = "<group>"; };
+		8178640F28B96BAF00AEA64B /* UserKernelShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserKernelShared.h; sourceTree = "<group>"; };
+		8178641028B9A33900AEA64B /* kern_helpers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = kern_helpers.cpp; sourceTree = "<group>"; };
+		8178641128B9A33900AEA64B /* kern_helpers.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = kern_helpers.hpp; sourceTree = "<group>"; };
+		CEDE8CE522984C0800C73034 /* Veneer.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Veneer.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDE8CEC22984C0800C73034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEDE8D4D22984F7600C73034 /* kern_config.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = kern_config.hpp; sourceTree = "<group>"; };
 		CEDE8D4E22984F7600C73034 /* kern_atomic.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = kern_atomic.hpp; sourceTree = "<group>"; };
@@ -91,13 +80,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		81BB75FA2810A17D00D50DC6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CEDE8CE222984C0800C73034 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -118,30 +100,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		81BB75DB2810929D00D50DC6 /* RTLSClient */ = {
+		8178640628B8BD6200AEA64B /* VeneerClient */ = {
 			isa = PBXGroup;
 			children = (
-				81BB75DC2810930100D50DC6 /* RTLSClient.cpp */,
-				81BB75DD2810930100D50DC6 /* RTLSClient.hpp */,
+				8178640B28B8BFFC00AEA64B /* VeneerClient.cpp */,
+				8178640C28B8BFFC00AEA64B /* VeneerClient.hpp */,
+				8178640F28B96BAF00AEA64B /* UserKernelShared.h */,
 			);
-			path = RTLSClient;
-			sourceTree = "<group>";
-		};
-		81BB75FE2810A17D00D50DC6 /* clienttest */ = {
-			isa = PBXGroup;
-			children = (
-				81BB75FF2810A17D00D50DC6 /* main.c */,
-			);
-			path = clienttest;
-			sourceTree = "<group>";
-		};
-		81BB76042812206600D50DC6 /* RTLSClientProvider */ = {
-			isa = PBXGroup;
-			children = (
-				81BB7605281220AB00D50DC6 /* RTLSClientProvider.cpp */,
-				81BB7606281220AB00D50DC6 /* RTLSClientProvider.hpp */,
-			);
-			path = RTLSClientProvider;
+			path = VeneerClient;
 			sourceTree = "<group>";
 		};
 		CEDE8CDB22984C0800C73034 = {
@@ -149,8 +115,7 @@
 			children = (
 				CEDE8D4B22984F5B00C73034 /* SDK */,
 				810098972783803800076D10 /* README.md */,
-				CEDE8CE722984C0800C73034 /* Rootless */,
-				81BB75FE2810A17D00D50DC6 /* clienttest */,
+				CEDE8CE722984C0800C73034 /* Veneer */,
 				CEDE8CE622984C0800C73034 /* Products */,
 				810F1BA326C4634F00452AE5 /* Frameworks */,
 			);
@@ -159,24 +124,25 @@
 		CEDE8CE622984C0800C73034 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CEDE8CE522984C0800C73034 /* Rootless.kext */,
-				81BB75FD2810A17D00D50DC6 /* clienttest */,
+				CEDE8CE522984C0800C73034 /* Veneer.kext */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CEDE8CE722984C0800C73034 /* Rootless */ = {
+		CEDE8CE722984C0800C73034 /* Veneer */ = {
 			isa = PBXGroup;
 			children = (
 				CEDE8CEC22984C0800C73034 /* Info.plist */,
 				CEDE8D7D2298501600C73034 /* kern_start.cpp */,
-				818B4B762808493B00848AB8 /* kern_rtls.hpp */,
-				818B4B752808493B00848AB8 /* kern_rtls.cpp */,
-				81BB75E02810937D00D50DC6 /* UserKernelShared.h */,
-				81BB76042812206600D50DC6 /* RTLSClientProvider */,
-				81BB75DB2810929D00D50DC6 /* RTLSClient */,
+				8178640728B8BDFC00AEA64B /* kern_venr.cpp */,
+				8178640828B8BDFC00AEA64B /* kern_venr.hpp */,
+				8178641028B9A33900AEA64B /* kern_helpers.cpp */,
+				8178641128B9A33900AEA64B /* kern_helpers.hpp */,
+				8178640228B8BA3200AEA64B /* kern_venr_iokit.cpp */,
+				8178640328B8BA3200AEA64B /* kern_venr_iokit.hpp */,
+				8178640628B8BD6200AEA64B /* VeneerClient */,
 			);
-			path = Rootless;
+			path = Veneer;
 			sourceTree = "<group>";
 		};
 		CEDE8D4B22984F5B00C73034 /* SDK */ = {
@@ -276,35 +242,19 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81BB75DF2810930100D50DC6 /* RTLSClient.hpp in Headers */,
-				818B4B782808493B00848AB8 /* kern_rtls.hpp in Headers */,
-				81BB7608281220AB00D50DC6 /* RTLSClientProvider.hpp in Headers */,
+				8178641328B9A33900AEA64B /* kern_helpers.hpp in Headers */,
+				8178640E28B8BFFC00AEA64B /* VeneerClient.hpp in Headers */,
+				8178640528B8BA3200AEA64B /* kern_venr_iokit.hpp in Headers */,
+				8178640A28B8BDFC00AEA64B /* kern_venr.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		81BB75FC2810A17D00D50DC6 /* clienttest */ = {
+		CEDE8CE422984C0800C73034 /* Veneer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 81BB76012810A17D00D50DC6 /* Build configuration list for PBXNativeTarget "clienttest" */;
-			buildPhases = (
-				81BB75F92810A17D00D50DC6 /* Sources */,
-				81BB75FA2810A17D00D50DC6 /* Frameworks */,
-				81BB75FB2810A17D00D50DC6 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = clienttest;
-			productName = clienttest;
-			productReference = 81BB75FD2810A17D00D50DC6 /* clienttest */;
-			productType = "com.apple.product-type.tool";
-		};
-		CEDE8CE422984C0800C73034 /* Rootless */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CEDE8CEF22984C0800C73034 /* Build configuration list for PBXNativeTarget "Rootless" */;
+			buildConfigurationList = CEDE8CEF22984C0800C73034 /* Build configuration list for PBXNativeTarget "Veneer" */;
 			buildPhases = (
 				CEDE8CE022984C0800C73034 /* Headers */,
 				CEDE8CE122984C0800C73034 /* Sources */,
@@ -316,9 +266,9 @@
 			);
 			dependencies = (
 			);
-			name = Rootless;
-			productName = RootlessTest;
-			productReference = CEDE8CE522984C0800C73034 /* Rootless.kext */;
+			name = Veneer;
+			productName = Veneer;
+			productReference = CEDE8CE522984C0800C73034 /* Veneer.kext */;
 			productType = "com.apple.product-type.kernel-extension";
 		};
 /* End PBXNativeTarget section */
@@ -327,18 +277,15 @@
 		CEDE8CDC22984C0800C73034 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = flagers;
 				TargetAttributes = {
-					81BB75FC2810A17D00D50DC6 = {
-						CreatedOnToolsVersion = 13.1;
-					};
 					CEDE8CE422984C0800C73034 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
-			buildConfigurationList = CEDE8CDF22984C0800C73034 /* Build configuration list for PBXProject "Rootless" */;
+			buildConfigurationList = CEDE8CDF22984C0800C73034 /* Build configuration list for PBXProject "Veneer" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -351,8 +298,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CEDE8CE422984C0800C73034 /* Rootless */,
-				81BB75FC2810A17D00D50DC6 /* clienttest */,
+				CEDE8CE422984C0800C73034 /* Veneer */,
 			);
 		};
 /* End PBXProject section */
@@ -389,51 +335,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		81BB75F92810A17D00D50DC6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81BB76002810A17D00D50DC6 /* main.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CEDE8CE122984C0800C73034 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8178640D28B8BFFC00AEA64B /* VeneerClient.cpp in Sources */,
+				8178640928B8BDFC00AEA64B /* kern_venr.cpp in Sources */,
+				8178640428B8BA3200AEA64B /* kern_venr_iokit.cpp in Sources */,
 				CEDE8D7C22984FE600C73034 /* plugin_start.cpp in Sources */,
-				81BB7607281220AB00D50DC6 /* RTLSClientProvider.cpp in Sources */,
-				81BB75DE2810930100D50DC6 /* RTLSClient.cpp in Sources */,
 				CEDE8D7E2298501600C73034 /* kern_start.cpp in Sources */,
-				818B4B772808493B00848AB8 /* kern_rtls.cpp in Sources */,
+				8178641228B9A33900AEA64B /* kern_helpers.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		81BB76022810A17D00D50DC6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		81BB76032810A17D00D50DC6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_STYLE = Automatic;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		CEDE8CED22984C0800C73034 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -562,19 +479,20 @@
 					"$(inherited)",
 					"MODULE_VERSION=$(MODULE_VERSION)",
 					"PRODUCT_NAME=$(PRODUCT_NAME)",
+					"LILU_CUSTOM_IOKIT_INIT=1",
 				);
 				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/Lilu.kext/Contents/Resources";
-				INFOPLIST_FILE = "$(SRCROOT)/Rootless/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Veneer/Info.plist";
 				KERNEL_EXTENSION_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
 				KERNEL_FRAMEWORK_HEADERS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Library/x86_64";
 				MARKETING_VERSION = 1.0.0;
-				MODULE_NAME = com.flagers.RootlessTest;
+				MODULE_NAME = com.flagers.Veneer;
 				MODULE_START = "$(PRODUCT_NAME)_kern_start";
 				MODULE_STOP = "$(PRODUCT_NAME)_kern_stop";
 				MODULE_VERSION = 1.0.0;
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flagers.Rootless;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flagers.Veneer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = kext;
 			};
@@ -591,19 +509,20 @@
 					"$(inherited)",
 					"MODULE_VERSION=$(MODULE_VERSION)",
 					"PRODUCT_NAME=$(PRODUCT_NAME)",
+					"LILU_CUSTOM_IOKIT_INIT=1",
 				);
 				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/Lilu.kext/Contents/Resources";
-				INFOPLIST_FILE = "$(SRCROOT)/Rootless/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Veneer/Info.plist";
 				KERNEL_EXTENSION_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
 				KERNEL_FRAMEWORK_HEADERS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Library/x86_64";
 				MARKETING_VERSION = 1.0.0;
-				MODULE_NAME = com.flagers.RootlessTest;
+				MODULE_NAME = com.flagers.Veneer;
 				MODULE_START = "$(PRODUCT_NAME)_kern_start";
 				MODULE_STOP = "$(PRODUCT_NAME)_kern_stop";
 				MODULE_VERSION = 1.0.0;
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flagers.Rootless;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flagers.Veneer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = kext;
 			};
@@ -612,16 +531,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		81BB76012810A17D00D50DC6 /* Build configuration list for PBXNativeTarget "clienttest" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				81BB76022810A17D00D50DC6 /* Debug */,
-				81BB76032810A17D00D50DC6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CEDE8CDF22984C0800C73034 /* Build configuration list for PBXProject "Rootless" */ = {
+		CEDE8CDF22984C0800C73034 /* Build configuration list for PBXProject "Veneer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEDE8CED22984C0800C73034 /* Debug */,
@@ -630,7 +540,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEDE8CEF22984C0800C73034 /* Build configuration list for PBXNativeTarget "Rootless" */ = {
+		CEDE8CEF22984C0800C73034 /* Build configuration list for PBXNativeTarget "Veneer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEDE8CF022984C0800C73034 /* Debug */,

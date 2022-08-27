@@ -1,26 +1,27 @@
 //
-//  RTLSClient.hpp
-//  Rootless
+//  VeneerClient.hpp
+//  Veneer
 //
-//  Created by flagers on 4/20/22.
+//  Created by flagers on 8/26/22.
 //  Copyright © 2022 flagers. All rights reserved.
 //
 
-#ifndef RTLSClient_hpp
-#define RTLSClient_hpp
+#ifndef VeneerClient_hpp
+#define VeneerClient_hpp
 
-#include "UserKernelShared.h"
+// Kernel SDK headers
 #include <IOKit/IOService.h>
 #include <IOKit/IOUserClient.h>
-#include "RTLSClientProvider.hpp"
+// Project headers
+#include "UserKernelShared.h"
 
-class RTLSClient : public IOUserClient
+class VeneerClient : public IOUserClient
 {
     using super = IOUserClient;
-    OSDeclareDefaultStructors(RTLSClient);
+    OSDeclareDefaultStructors(VeneerClient);
     
 private:
-    RTLSClientProvider *mProvider;
+    IOService *mProvider;
     task_t mTask;
     static const IOExternalMethodDispatch sMethods[kNumberOfMethods];
     
@@ -36,14 +37,13 @@ public:
                                     IOExternalMethodDispatch* dispatch, OSObject* target, void* reference) override;
     
 protected:
-    static IOReturn sMethodOpen(RTLSClient* target, void* ref, IOExternalMethodArguments* args);
-    static IOReturn sMethodClose(RTLSClient* target, void* ref, IOExternalMethodArguments* args);
-    static IOReturn sMethodTest(RTLSClient* target, void* ref, IOExternalMethodArguments* args);
+    static IOReturn sMethodOpen(VeneerClient* target, void* ref, IOExternalMethodArguments* args);
+    static IOReturn sMethodClose(VeneerClient* target, void* ref, IOExternalMethodArguments* args);
+    static IOReturn sMethodTest(VeneerClient* target, void* ref, IOExternalMethodArguments* args);
     
     virtual IOReturn methodOpen(IOExternalMethodArguments* args);
     virtual IOReturn methodClose(IOExternalMethodArguments* args);
     virtual IOReturn methodTest(IOExternalMethodArguments* args);
 };
 
-
-#endif /* RootlessClient_hpp */
+#endif /* VeneerClient_hpp */
